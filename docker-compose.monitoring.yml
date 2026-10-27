@@ -1,0 +1,16 @@
+services:
+  # Nagios Core Centralized Monitoring Server
+  nagios:
+    image: jasonrivers/nagios:latest
+    container_name: cinescope-nagios
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./nagios:/opt/nagios/etc/servers:ro
+    environment:
+      - NAGIOSADMIN_USER=nagiosadmin
+      - NAGIOSADMIN_PASS=nagiosadmin
+      - NAGIOS_TIMEZONE=UTC
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

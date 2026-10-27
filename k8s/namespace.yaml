@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cinescope
+  labels:
+    app.kubernetes.io/name: cinescope
+    app.kubernetes.io/part-of: cinescope-movie-platform
+    environment: production

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cinescope-service
+  namespace: cinescope
+  labels:
+    app: cinescope-frontend
+    tier: frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: cinescope-frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+      protocol: TCP

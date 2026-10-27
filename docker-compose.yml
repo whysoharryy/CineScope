@@ -1,0 +1,26 @@
+services:
+  cinescope-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cinescope-frontend:1.0
+    container_name: cinescope-app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:80/healthz || exit 1"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    environment:
+      - NODE_ENV=production
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 64M
