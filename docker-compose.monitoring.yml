@@ -1,12 +1,10 @@
 services:
-  # Nagios Core Centralized Monitoring Server
   nagios:
-    image: jasonrivers/nagios:latest
-    platform: linux/amd64
+    image: jasonrivers/nagios:4.4.6
     container_name: cinescope-nagios
     restart: unless-stopped
     ports:
-      - "9000:80"
+      - "8000:80"
     volumes:
       - ./nagios:/opt/nagios/etc/servers:ro
     environment:
