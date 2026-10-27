@@ -2,6 +2,7 @@ services:
   # Nagios Core Centralized Monitoring Server
   nagios:
     image: jasonrivers/nagios:latest
+    platform: linux/amd64
     container_name: cinescope-nagios
     restart: unless-stopped
     ports:
