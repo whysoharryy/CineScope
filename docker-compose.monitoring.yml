@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./nagios:/opt/nagios/etc/objects:ro
+      - ./nagios:/opt/nagios/etc/conf.d:ro
     environment:
       - NAGIOSADMIN_USER=nagiosadmin
       - NAGIOSADMIN_PASS=nagiosadmin
