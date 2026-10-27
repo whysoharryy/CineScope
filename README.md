@@ -389,6 +389,3 @@ docker rmi cinescope-frontend:1.0
 
 ## 📄 License & Academic Attribution
 Developed as an educational DevOps showcase. Designed for high clarity, modularity, and zero external dependency risk.
-#   C i n e S c o p e -  
- #   C i n e S c o p e -  
- 
